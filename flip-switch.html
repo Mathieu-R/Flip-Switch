@@ -69,6 +69,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
+            transition: transform 0.8s, cubic-bezier(0.6, 0, 0.3, 1);
             transform: translate(-50%, -50%);
         }
 
@@ -79,21 +80,72 @@
 
         .flipped .back button:nth-of-type(1) {
             transform: translate(-50%, -150%);
+            transition-delay: .1s;
         }
 
          .flipped .back button:nth-of-type(2) {
-            transform: translate(-50%, -50%);
+            transform: translate(50%, -50%);
+            transition-delay: .15s;
         }
 
          .flipped .back button:nth-of-type(3) {
             transform: translate(-50%, 50%);
+            transition-delay: .2s;
         }
 
          .flipped .back button:nth-of-type(4) {
             transform: translate(-150%, -50%);
+            transition-delay: .25s;
+        }
+
+        .ripple {
+            width: 1px;
+            height: 1px;
+            background: var(--color);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: transform 0.5s, cubic-bezier(0.6, 0, 0.3, 1);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            will-change: transform;
+        }
+
+        .ripple.expanded {
+            transform: translate(-50%, -50%) scale(1);   
+        }
+
+        .shadow2px {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 4px 2px #000;
+            transition: transform 0.8s, cubic-bezier(0.6, 0, 0.3, 1) opacity 0.5s;
+            transform: scale(0.5) translateY(2px);
+            opacity: 0.3;
+        }
+
+        .shadow12px {
+            box-shadow: 0 0 24px 16px #000;
+            opacity: 0;
+        }
+
+        .shadow2px.flipped,
+        .shadow12px.flipped {
+            transform: translateY(80px); 
+        }
+
+        .shadow12px.flipped {
+            opacity: 1;
         }
         
     </style>
+
+    <div class="ripple"></div>
+    <div class="shadow2px"></div>
 
     <div class="container">
         <div class="front">
