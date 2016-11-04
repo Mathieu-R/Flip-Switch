@@ -1,0 +1,8 @@
+// Placez vos paramètres dans ce fichier pour remplacer les paramètres par défaut et les paramètres utilisateur.
+{
+      // Contrôle la famille de polices.
+    "editor.fontFamily": "Meslo, Menlo, Inconsolata, Monaco, 'Courier New', monospace",
+
+    // Contrôle la taille de police en pixels.
+    "editor.fontSize": 14,
+}
